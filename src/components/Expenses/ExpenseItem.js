@@ -1,14 +1,15 @@
+import React, {useState} from 'react';
 import './ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
 //named props that are passed to the function key value pairs kesy are title, amount, date and value are the value set
 function ExpenseItem( props) {
 
-    
-    let title = props.title;
+     const [title, setTitle]  = useState(props.title);
+
   const clickHandler = () => {
-    title = 'Updated!';
-  }
+    setTitle('Updated!');
+  };
     return (
         <Card className="expense-item">
            <ExpenseDate date = {props.date}></ExpenseDate>
